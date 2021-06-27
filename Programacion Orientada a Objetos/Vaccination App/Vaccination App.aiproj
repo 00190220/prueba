@@ -1,0 +1,37 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>4e50a669-d682-4dc1-bc6f-65cbd2e157c1</ProjectGuid>
+    <OutputType>msi</OutputType>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Vaccination App.aip</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <AssemblyName>Vaccination App</AssemblyName>
+    <Name>Vaccination App</Name>
+    <RootNamespace>Vaccination App</RootNamespace>
+    <LoadFromTemplate>
+    </LoadFromTemplate>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'AnyCPU_Debug' " />
+  <ItemGroup>
+    <Compile Include="Vaccination App.aip">
+      <SubType>Content</SubType>
+    </Compile>
+  </ItemGroup>
+  <Target Name="Build">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Rebuild">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Clean">
+  </Target>
+  <Target Name="ResolveAssemblyReferences">
+  </Target>
+  <Import Condition="'$(AdvancedInstallerMSBuildTargets)' != ''" Project="$(AdvancedInstallerMSBuildTargets)\AdvInstExtTasks.Targets" />
+  <Import Condition="('$(AdvancedInstallerMSBuildTargets)' == '') And (Exists('$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets'))" Project="$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets" />
+</Project>
